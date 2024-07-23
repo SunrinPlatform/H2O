@@ -36,7 +36,7 @@ public class PlayerController : MonoBehaviour
 
         horizontal = Input.GetAxisRaw("Horizontal");
 
-        print(horizontal);
+        //print(horizontal);
         
         rigidbody2D.velocity = new Vector2(horizontal * moveSpeed*Time.deltaTime, rigidbody2D.velocity.y);
         
