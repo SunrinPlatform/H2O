@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 public class AnemyMove : MonoBehaviour
 {
@@ -23,13 +24,14 @@ public class AnemyMove : MonoBehaviour
 
     void Move()
     {
-        Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, 5.0f);
+        Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, 15.0f);
 
         bool move = true;
 
         for (int i = 0; i < cols.Length; i++) {
             if (cols[i].gameObject.name == "Player") {
                 move = false;
+                attack(cols[i].gameObject);
             }
         }
     
@@ -38,5 +40,12 @@ public class AnemyMove : MonoBehaviour
             v.x += delta * Mathf.Sin(Time.time * speed);
             transform.position = v;
         }
+    }
+
+    void attack(GameObject obj)
+    {
+        Vector2 direction = (Vector2) obj.transform.position - (Vector2)transform.position;
+
+        transform.Translate(direction * speed * Time.deltaTime);
     }
 }
