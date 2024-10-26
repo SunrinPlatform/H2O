@@ -52,7 +52,6 @@ void Absorption()
                 player.SetActive(true);
                 player.transform.position = transform.position;
                 print("asdf" + shootingSpeed);
-                //player.transform.position += Vector3.right * shootingSpeed;
                 playerRigidbody2D.velocity = Vector2.right * shootingSpeed;
                 color.color = new Color(255f / 255f, 242f / 255f, 114f / 255f);
                 isPlayerInSponge = false; // �߻� �� �������� ������������ ǥ��
@@ -64,7 +63,7 @@ void Absorption()
                 player.SetActive(true);
                 player.transform.position = transform.position;
                 print("asdf" + shootingSpeed);
-                player.transform.position += Vector3.left * shootingSpeed;
+                playerRigidbody2D.velocity = Vector2.left * shootingSpeed;
                 color.color = new Color(255f / 255f, 242f / 255f, 114f / 255f);
                 isPlayerInSponge = false; // �߻� �� �������� ������������ ǥ��
             }
@@ -74,7 +73,7 @@ void Absorption()
                 player.SetActive(true);
                 player.transform.position = transform.position;
                 print("asdf" + shootingSpeed);
-                player.transform.position += Vector3.up * shootingSpeed;
+                playerRigidbody2D.velocity = Vector2.up * shootingSpeed;
                 color.color = new Color(255f / 255f, 242f / 255f, 114f / 255f);
                 isPlayerInSponge = false; // �߻� �� �������� ������������ ǥ��
             }
@@ -84,7 +83,7 @@ void Absorption()
                 player.SetActive(true);
                 player.transform.position = transform.position;
                 print("asdf" + shootingSpeed);
-                player.transform.position += Vector3.down * shootingSpeed;
+                playerRigidbody2D.velocity = Vector2.down * shootingSpeed;
                 color.color = new Color(255f / 255f, 242f / 255f, 114f / 255f);
                 isPlayerInSponge = false; // �߻� �� �������� ������������ ǥ��
             }
