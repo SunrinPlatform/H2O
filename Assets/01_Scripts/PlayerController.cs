@@ -86,11 +86,11 @@ public class PlayerController : MonoBehaviour
     {
         if (horizontal == -1)
         {
-            transform.localScale = new Vector3(-7, 7, 1);
+            transform.localScale = new Vector3(-3.7f, 3.6f, 1);
         }
         else if (horizontal == 1)
         {
-            transform.localScale = new Vector3(7, 7, 1);
+            transform.localScale = new Vector3(3.7f, 3.6f, 1);
 
         }
     }
