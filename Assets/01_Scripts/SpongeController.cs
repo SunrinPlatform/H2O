@@ -43,49 +43,50 @@ void Absorption()
     if (Input.GetKeyDown(KeyCode.E))
     {
         print("pressed");
-        // ¸¸¾à ÇÃ·¹ÀÌ¾î°¡ ½ºÆùÁö ¾È¿¡ µé¾î°¡ ÀÖ´Ù¸é
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È¿ï¿½ ï¿½ï¿½î°¡ ï¿½Ö´Ù¸ï¿½
         if (isPlayerInSponge)
         {
             if (shotDirection == Direction.East)
             {
-                print("¹ß»ç!È÷È÷");
+                print("ï¿½ß»ï¿½!ï¿½ï¿½ï¿½ï¿½");
                 player.SetActive(true);
                 player.transform.position = transform.position;
                 print("asdf" + shootingSpeed);
-                player.transform.position += Vector3.right * shootingSpeed;
+                //player.transform.position += Vector3.right * shootingSpeed;
+                playerRigidbody2D.velocity = Vector2.right * shootingSpeed;
                 color.color = new Color(255f / 255f, 242f / 255f, 114f / 255f);
-                isPlayerInSponge = false; // ¹ß»ç ÈÄ ½ºÆùÁö¸¦ ºüÁ®³ª¿ÔÀ½À» Ç¥½Ã
+                isPlayerInSponge = false; // ï¿½ß»ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
             }
 
             else if (shotDirection == Direction.West)
             {
-                print("¹ß»ç!È÷È÷");
+                print("ï¿½ß»ï¿½!ï¿½ï¿½ï¿½ï¿½");
                 player.SetActive(true);
                 player.transform.position = transform.position;
                 print("asdf" + shootingSpeed);
                 player.transform.position += Vector3.left * shootingSpeed;
                 color.color = new Color(255f / 255f, 242f / 255f, 114f / 255f);
-                isPlayerInSponge = false; // ¹ß»ç ÈÄ ½ºÆùÁö¸¦ ºüÁ®³ª¿ÔÀ½À» Ç¥½Ã
+                isPlayerInSponge = false; // ï¿½ß»ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
             }
             else if (shotDirection == Direction.North)
             {
-                print("hhhhhhh ¹ß»ç!È÷È÷");
+                print("hhhhhhh ï¿½ß»ï¿½!ï¿½ï¿½ï¿½ï¿½");
                 player.SetActive(true);
                 player.transform.position = transform.position;
                 print("asdf" + shootingSpeed);
                 player.transform.position += Vector3.up * shootingSpeed;
                 color.color = new Color(255f / 255f, 242f / 255f, 114f / 255f);
-                isPlayerInSponge = false; // ¹ß»ç ÈÄ ½ºÆùÁö¸¦ ºüÁ®³ª¿ÔÀ½À» Ç¥½Ã
+                isPlayerInSponge = false; // ï¿½ß»ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
             }
             else if (shotDirection == Direction.South)
             {
-                print("¹ß»ç!È÷È÷");
+                print("ï¿½ß»ï¿½!ï¿½ï¿½ï¿½ï¿½");
                 player.SetActive(true);
                 player.transform.position = transform.position;
                 print("asdf" + shootingSpeed);
                 player.transform.position += Vector3.down * shootingSpeed;
                 color.color = new Color(255f / 255f, 242f / 255f, 114f / 255f);
-                isPlayerInSponge = false; // ¹ß»ç ÈÄ ½ºÆùÁö¸¦ ºüÁ®³ª¿ÔÀ½À» Ç¥½Ã
+                isPlayerInSponge = false; // ï¿½ß»ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
             }
                
         }
@@ -93,7 +94,7 @@ void Absorption()
         { 
                 player.SetActive(false);
                 color.color = new Color(114f/255f,235f/255f,255f/255f);
-            isPlayerInSponge = true; // ÇÃ·¹ÀÌ¾î¸¦ ½ºÆùÁö ¾È¿¡ ³ÖÀ½
+            isPlayerInSponge = true; // ï¿½Ã·ï¿½ï¿½Ì¾î¸¦ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È¿ï¿½ ï¿½ï¿½ï¿½ï¿½
             
         }
     }

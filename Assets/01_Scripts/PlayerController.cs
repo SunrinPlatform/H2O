@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     Transform transform;
     Rigidbody2D rigidbody2D;
     private Animator animator;
+    private bool isMoving;
 
 
     // Start is called before the first frame update
@@ -40,9 +41,17 @@ public class PlayerController : MonoBehaviour
 
         horizontal = Input.GetAxisRaw("Horizontal");
 
-        //print(horizontal);
-        
-        rigidbody2D.velocity = new Vector2(horizontal * moveSpeed*Time.deltaTime, rigidbody2D.velocity.y);
+        if (horizontal != 0) {
+            isMoving = true;
+            rigidbody2D.velocity = new Vector2(horizontal * moveSpeed, rigidbody2D.velocity.y);
+        }
+        else {
+            if (isMoving) {
+                rigidbody2D.velocity = new Vector2(0, rigidbody2D.velocity.y);
+            }
+
+            isMoving = false;
+        }
         
     }
     void Jump()
@@ -87,17 +96,17 @@ public class PlayerController : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground")) // Ãæµ¹ÇÑ ¿ÀºêÁ§Æ®°¡ "Ground" ÅÂ±×¸¦ °¡Áø °æ¿ì
+        if (collision.gameObject.CompareTag("Ground")) // ï¿½æµ¹ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ "Ground" ï¿½Â±×¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         {
-            isGrounded = true; // ¶¥¿¡ ºÙ¾î ÀÖ´Â »óÅÂ·Î ¼³Á¤
+            isGrounded = true; // ï¿½ï¿½ï¿½ï¿½ ï¿½Ù¾ï¿½ ï¿½Ö´ï¿½ ï¿½ï¿½ï¿½Â·ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
     }
 
     void OnCollisionExit2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Ground")) // Ãæµ¹ÇÑ ¿ÀºêÁ§Æ®°¡ "Ground" ÅÂ±×¸¦ °¡Áø °æ¿ì
+        if (collision.gameObject.CompareTag("Ground")) // ï¿½æµ¹ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ "Ground" ï¿½Â±×¸ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         {
-            isGrounded = false; // ¶¥¿¡¼­ ¹þ¾î³­ »óÅÂ·Î ¼³Á¤
+            isGrounded = false; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½î³­ ï¿½ï¿½ï¿½Â·ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
     }
 }
