@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Entity;
 
-public class PlayerController : MonoBehaviour
+public class Player : Unit
 {
     [SerializeField] private float moveSpeed;
     [SerializeField] private float jumpForce;
@@ -108,5 +109,23 @@ public class PlayerController : MonoBehaviour
         {
             isGrounded = false; // ������ ��� ���·� ����
         }
+    }
+
+    void Hurt(int amount) {
+        if (amount > defence) {
+            currentHealth -= 1;
+            // play sound
+
+            if (currentHealth <= 0) {
+                Death();
+            }
+        }
+        else {
+            // play sound
+        }
+    }
+
+    void Death() {
+        // play sound
     }
 }
