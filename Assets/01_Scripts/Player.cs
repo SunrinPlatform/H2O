@@ -87,11 +87,11 @@ public class Player : Unit
     {
         if (horizontal == -1)
         {
-            transform.localScale = new Vector3(-3.7f, 3.6f, 1);
+            transform.localScale = new Vector3(-5f, 5f, 1);
         }
         else if (horizontal == 1)
         {
-            transform.localScale = new Vector3(3.7f, 3.6f, 1);
+            transform.localScale = new Vector3(5f, 5f, 1);
 
         }
     }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Sponge
+  - Trash
   layers:
   - Default
   - TransparentFX
