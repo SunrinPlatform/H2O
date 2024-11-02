@@ -132,7 +132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 642210757}
   - component: {fileID: 642210756}
-  - component: {fileID: 642210755}
+  - component: {fileID: 642210758}
   - component: {fileID: 642210754}
   - component: {fileID: 642210753}
   - component: {fileID: 642210752}
@@ -201,20 +201,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0.010136094}
   m_Size: {x: 0.16584152, y: 0.16584162}
   m_Direction: 0
---- !u!114 &642210755
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 642210751}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd6041b281d367847aee135586f85a65, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 2000
-  jumpForce: 20
 --- !u!212 &642210756
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -282,6 +268,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &642210758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 642210751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd6041b281d367847aee135586f85a65, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 4
+  currentHealth: 4
+  isDamage: 0
+  moveSpeed: 17
+  jumpForce: 20
 --- !u!1 &1070470508
 GameObject:
   m_ObjectHideFlags: 0
@@ -379,8 +382,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfb00eaa60082ed46a11b95277ff5b54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 0
+  currentHealth: 0
+  isDamage: 0
   delta: 1
   speed: 2
+  range: 10
 --- !u!1 &1153507907
 GameObject:
   m_ObjectHideFlags: 0

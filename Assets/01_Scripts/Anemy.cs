@@ -1,14 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using static UnityEngine.GraphicsBuffer;
+using Entity;
 
-public class AnemyMove : MonoBehaviour
+public class Anemy : Unit
 {
 
     Vector2 pos;
-    [SerializeField] float delta = 1.0f;
-    [SerializeField] float speed = 2.0f;
+    [SerializeField] float delta;
+    [SerializeField] float speed;
+    [SerializeField] float range;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +23,7 @@ public class AnemyMove : MonoBehaviour
 
     void Move()
     {
-        Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, 15.0f);
+        Collider2D[] cols = Physics2D.OverlapCircleAll(transform.position, range);
 
         bool move = true;
 
